@@ -1,4 +1,15 @@
 let ul = $("#searchResults");
+let fromBox = $("#carFrom");
+let toBox = $("#carTo");
+let startBox = $("#carStart");
+let returnBox = $("#carReturn");
+let searchBtn = $("#searchBtn");
+
+// searchBtn.onclick = function() {
+//     fetch("https://booking-com.p.rapidapi.com/v1/car-rental/search?pick_up_datetime=" + startBox + "%2013%3A00%3A00&pick_up_longitude=" + fromBox + "&drop_off_longitude=" + toBox + "&pick_up_latitude=" 55.7518540820001 &drop_off_latitude=55.7518540820001&sort_by=recommended&locale=en-gb&currency=AED&drop_off_datetime=2022-07-02%2013%3A00%3A00&from_country=it")
+// }
+
+
 fetch("https://booking-com.p.rapidapi.com/v1/car-rental/search?pick_up_datetime=2022-07-01%2013%3A00%3A00&pick_up_longitude=37.620230899&drop_off_longitude=37.620230899&pick_up_latitude=55.7518540820001&drop_off_latitude=55.7518540820001&sort_by=recommended&locale=en-gb&currency=AED&drop_off_datetime=2022-07-02%2013%3A00%3A00&from_country=it", {
 	"method": "GET",
 	"headers": {
