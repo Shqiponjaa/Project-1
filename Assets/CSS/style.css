@@ -1,4 +1,11 @@
-
+:root{
+  background-color: rgb(158, 169, 190);
+  }
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 .hero-section {
   background: url("https://unsplash.it/600/440?image=693") 25% no-repeat;
   background-size: cover;
@@ -292,6 +299,238 @@ a {
     }
   }
   
+.travel-feature-card-header {
+  margin-top: 30px;
+  background-color: #56524b;
+  padding: 10px 15px 5px 45px;
+  position: relative;
+  margin-top: 15px;
+}
+
+.travel-feature-card-header.icon:after {
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #fefefe;
+}
+
+.travel-feature-card-header.hotel-icon:after {
+  content: "\f236";
+}
+
+.travel-feature-card-header.car-icon:after {
+  content: "\f1b9";
+}
+
+.travel-feature-card-header .travel-feature-card-subtitle {
+  float: left;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.travel-feature-card-header-controls a {
+  color: #fefefe;
+}
+
+.travel-feature-card-header-controls i {
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+}
+
+.travel-feature-card-image {
+  margin-top: 5px;
+}
+
+.travel-feature-card-details {
+  background: #f0f0f0;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+  color: #8a8a8a;
+}
+
+.travel-feature-card-details button.added-button {
+  color: #505050;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 0.8em;
+}
+
+.travel-feature-card-details button.added-button img {
+  margin-right: 5px;
+}
+
+.travel-feature-card-details button.added-button:hover {
+  color: #505050;
+  border: 1px solid #747474;
+}
+
+.travel-feature-card-details button.add-button {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .travel-feature-card-content {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cacaca;
+  }
+}
+@charset "UTF-8";
+
+.card-article-hover {
+  box-shadow: 0px 0px 7px #888888;
+}
+
+.card-article-hover .card-section {
+  width: 90%;
+  background:transparent;
+  margin: 0 auto;
+  padding-top: 10px;
+  margin-top: -3rem;
+  z-index: 2;
+}
+
+.card-article-hover .card-section .article-subtext {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+.card-article-hover .card-section .article-title {
+  font-weight: bold;
+  font-family: ‘Georgia’, serif;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.card-article-hover .card-section .article-desc {
+  font-family:'Times New Roman', Times, serif;
+  font-size: 3rem;
+}
+
+.card-article-hover .card-divider {
+  background: #fff;
+}
+
+.card-article-hover .card-divider .author {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2daebf;
+}
+
+.card-article-hover .hover-border {
+  height: 10px;
+  width: 450px;
+  background: #2daebf;
+  width: 0;
+  transition: width 1s ease;
+}
+
+.card-article-hover:hover .hover-border {
+  height: 10px;
+  width: 450px;
+  transition: width 1s ease;
+}
+
+.card-article-hover .author {
+  color: navy;
+}
+
+.card-article-hover .avatar {
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
+.card-article-hover .meta-data {
+  text-transform: uppercase;
+}
+
+
+
+
+.ecommerce-product-slider .orbit-previous,
+.ecommerce-product-slider .orbit-next {
+  color: #cacaca;
+}
+
+.ecommerce-product-slider .orbit-bullets button {
+  height: 0.65rem;
+  width: 0.65rem;
+}
+
+.ecommerce-product-slider .product-card {
+  background-color: #fefefe;
+  border: 1px solid #e6e6e6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ecommerce-product-slider .product-card-thumbnail {
+  display: block;
+  position: relative;
+}
+
+.ecommerce-product-slider .product-card-title {
+  font-family: 'Open sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.ecommerce-product-slider .product-card-desc {
+  color: #8a8a8a;
+  display: block;
+  font-family: 'Open sans', sans-serif;
+  font-size: 0.85rem;
+}
+
+.ecommerce-product-slider .product-card-price {
+  color: #3e3e3e;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+.ecommerce-product-slider .product-card-sale {
+  color: #cacaca;
+  display: inline-block;
+  font-size: 0.85rem;
+  margin-left: 0.3rem;
+  text-decoration: line-through;
+}
+
+.ecommerce-product-slider .product-card-colors {
+  display: block;
+  margin-top: 0.8rem;
+}
+
+.ecommerce-product-slider .product-card-color-option {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
+
+
+
 
   
   
