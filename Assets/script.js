@@ -18,13 +18,6 @@ $(document).mouseup(function (e) {
         container.removeClass('is-active');
     }
 });
-
-var dt = new Date();
-document.getElementById("datetime")
-    .innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
-
-
-
 var textToWrite = document.getElementById("primary button expanded search-button").value;
 var textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' });
 
@@ -34,3 +27,5 @@ downloadLink.innerHTML = "Download File";
 
 downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
 downloadLink.click();
+
+
