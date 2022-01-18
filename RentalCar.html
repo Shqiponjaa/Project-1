@@ -5,48 +5,22 @@
     <title>CheapTravel | Welcome</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
   </head>
 <header>
-    <h1>Rental cars </h1> </header>
-  <div class="tabbed-search-content tabs-content" data-tabs-content="tabbed-search">
-     <div class="tabs-panel is-active" id="panel1">
-      <form>
-        <div class="row">
-          <div class="small-12 medium-2 columns">
-            <label>
-              <input id='carFrom' type="text" placeholder="From">
-            </label>
-          </div>
-          <div class="small-12 medium-2 columns">
-            <label>
-              <input id='carTo' type="text" placeholder="To">
-            </label>
-          </div>
-          <div class="small-12 medium-2 columns">
-            <label>
-              <input id="carStart" type="text" placeholder="Start Date">
-            </label>
-          </div>
-          <div class="small-12 medium-2 columns">
-            <label>
-              <input id="carReturn" type="text" placeholder="Return Date">
-            </label>
-          </div>
-          <div class="small-12 medium-2 columns">
-            <button id="searchBtn"> Search </button>
-          </div>
-<main>
-  <body>
-    <div>
-      <ul id="searchResults">
+    <h1>Rental Cars </h1> </header>
 
-      </ul>
-  </div>
-      <!-- <script src="" -->
-      <script src="script.js"></script>
-  </body>
+<section id="search-box">
+  <h3>Search City Name </h3>
+  <input id="rentalInputBox" type="text" placeholder="City Name">
+  <h3>Select Pick-up Date</h3>
+  <input id="rentalPickupDate" type="date" placeholder="Pick-up Date">
+  <h3>Select Drop-off Date</h3>
+  <input id="rentalDropoffDate" type="date" placeholder="Drop-off Date">
+  <button id="rentalSearchBtn">Search Car Rentals</button>
+</section>
 
-
-</main>
-          
+<section id="rentalResults">
+  <h2>Results</h2>
+  <!-- Car rental API results go here -->
+</section>
