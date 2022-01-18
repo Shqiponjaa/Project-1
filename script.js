@@ -35,7 +35,87 @@ $(document).ready(function(){
             .then(response => response.json())
             .then(function(rentalResults){
                 console.log(rentalResults);
-                console.log("fetch complete")
+                console.log("fetch complete");
+                // display results on page 
+                for(i=0; i < rentalResults.search_results.length; i++) {
+                let rentalResultBox = $("#rentalResults");
+                // all necessary vehicle info for page
+                let vehicleName = rentalResults.search_results[i].vehicle_info.v_name;
+                let vehicleSeating = rentalResults.search_results[i].vehicle_info.seats;
+                let vehicleTransmission = rentalResults.search_results[i].vehicle_info.transmission;
+
+                // let vehiclePic = rentalResults.search_results.vehicle_info.image_url;
+                
+                // all necessary pricing info 
+                let vehicleCost = rentalResults.search_results[i].pricing_info.price;
+               
+                //  all necessary supplier info 
+                let supplierName = rentalResults.search_results[i].supplier_info.name;
+                let supplierAddress = rentalResults.search_results[i].supplier_info.address;
+
+                let supplierLogo = rentalResults.search_results[i].supplier_info.logo_url;
+                
+                // assign values and display on page 
+                let content;
+
+                let rentalInfoBox = document.createElement("div");
+                rentalInfoBox.classList.add("rentalBox");
+                let vehicleNameEl = document.createElement("h3");
+                let vehicleSeatingEl = document.createElement("p");
+                let vehicleTransmissionEl = document.createElement("p");
+                let vehiclePicEl = document.createElement("img");
+                let vehicleCostEl = document.createElement("p");
+                let supplierNameEl = document.createElement("p");
+                let supplierAddressEl = document.createElement("p");
+                let supplierLogoEl = document.createElement("img"); 
+
+
+
+                content = document.createTextNode(vehicleName);
+                vehicleNameEl.appendChild(content);
+                rentalInfoBox.appendChild(vehicleNameEl);               
+
+                content = document.createTextNode("Number of seats: " + vehicleSeating);
+                vehicleSeatingEl.appendChild(content);
+                rentalInfoBox.appendChild(vehicleSeatingEl);
+
+                content = document.createTextNode("Transmission Type: " + vehicleTransmission);
+                vehicleTransmissionEl.appendChild(content);
+                rentalInfoBox.appendChild(vehicleTransmissionEl);
+
+                // content = document.createTextNode(vehiclePic);
+                // vehiclePicEl.appendChild(content);
+                // rentalInfoBox.appendChild(vehiclePicEl);
+
+                content = document.createTextNode("Total drive off cost: " + vehicleCost);
+                vehicleCostEl.appendChild(content);
+                rentalInfoBox.appendChild(vehicleCostEl);
+
+                content = document.createTextNode("Supplier Name: " + supplierName);
+                supplierNameEl.appendChild(content);
+                rentalInfoBox.appendChild(supplierNameEl);
+
+                content = document.createTextNode("Address: " + supplierAddress);
+                supplierAddressEl.appendChild(content);
+                rentalInfoBox.appendChild(supplierAddressEl);
+                console.log(rentalInfoBox);
+
+                // content = document.createTextNode(supplierLogo);
+                // supplierLogoEl.appendChild(content);
+                // rentalInfoBox.appendChild(supplierLogoEl);
+
+                rentalResultBox[0].appendChild(rentalInfoBox);}
+
+
+
+
+
+
+
+
+
+
+
             })
             .catch(err => {
                 console.error(err);
