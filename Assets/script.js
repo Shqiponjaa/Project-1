@@ -1,21 +1,4 @@
-
-$.datepicker.parseDate("yy-mm-dd", "2007-01-26");
-
-$(function () {
-    $("#datepicker").datepicker();
-    $("#datepicker1").datepicker();
-    $("#datepicker2").datepicker();
-    $("#datepicker3").datepicker();
-    $("#datepicker4").datepicker();
-    $("#datepicker5").datepicker();
-    $("#datepicker6").datepicker();
-    $("#datepicker7").datepicker();
-});
-
-
-}
-
-fetch("https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/data/en-GB/airlines.json", {
+fetch("https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/prices/cheap?origin=HKT&page=None&currency=RUB&destination=-", {
 	"method": "GET",
 	"headers": {
 		"x-access-token": "undefined",
@@ -29,7 +12,6 @@ fetch("https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/data/en
 .catch(err => {
 	console.error(err);
 });
-
 e.preventDefault();
 var search = searchInput.value.trim();
 fetchCoords(search);
