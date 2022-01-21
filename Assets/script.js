@@ -16,7 +16,7 @@ e.preventDefault();
 var search = searchInput.value.trim();
 fetchCoords(search);
 searchInput.value = '';
-}
+
 
 function handleSearchHistoryClick(e) {
 if (!e.target.matches('.btn-history')) {
