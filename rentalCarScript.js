@@ -44,7 +44,7 @@ $(document).ready(function(){
                 let vehicleSeating = rentalResults.search_results[i].vehicle_info.seats;
                 let vehicleTransmission = rentalResults.search_results[i].vehicle_info.transmission;
 
-                // let vehiclePic = rentalResults.search_results.vehicle_info.image_url;
+                let vehiclePic = rentalResults.search_results[i].vehicle_info.image_url;
                 
                 // all necessary pricing info 
                 let vehicleCost = rentalResults.search_results[i].pricing_info.price;
@@ -64,6 +64,7 @@ $(document).ready(function(){
                 let vehicleSeatingEl = document.createElement("p");
                 let vehicleTransmissionEl = document.createElement("p");
                 let vehiclePicEl = document.createElement("img");
+
                 let vehicleCostEl = document.createElement("p");
                 let supplierNameEl = document.createElement("p");
                 let supplierAddressEl = document.createElement("p");
@@ -83,9 +84,8 @@ $(document).ready(function(){
                 vehicleTransmissionEl.appendChild(content);
                 rentalInfoBox.appendChild(vehicleTransmissionEl);
 
-                // content = document.createTextNode(vehiclePic);
-                // vehiclePicEl.appendChild(content);
-                // rentalInfoBox.appendChild(vehiclePicEl);
+                vehiclePicEl.setAttribute("src", vehiclePic);
+                rentalInfoBox.appendChild(vehiclePicEl);
 
                 content = document.createTextNode("Total drive off cost: " + vehicleCost);
                 vehicleCostEl.appendChild(content);
@@ -100,9 +100,8 @@ $(document).ready(function(){
                 rentalInfoBox.appendChild(supplierAddressEl);
                 console.log(rentalInfoBox);
 
-                // content = document.createTextNode(supplierLogo);
-                // supplierLogoEl.appendChild(content);
-                // rentalInfoBox.appendChild(supplierLogoEl);
+                supplierLogoEl.setAttribute("src" , supplierLogo);
+                rentalInfoBox.appendChild(supplierLogoEl);
 
                 rentalResultBox[0].appendChild(rentalInfoBox);}
 
@@ -127,4 +126,4 @@ $(document).ready(function(){
         
     })
 })
-// tst
+// test

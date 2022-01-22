@@ -1,4 +1,27 @@
+#hotelSearchBtn {
+  background-color: orange;
 
+}
+
+.rentalBox{
+  border: solid black 1px;
+  padding: 2px;
+  margin: 5px;
+  background-color: aquamarine;
+  transition: 0.2s;
+
+  
+
+}
+
+.rentalBox:hover {
+  transition: 0.2s;
+  box-shadow: 4px 4px 3px grey;
+}
+
+.rentalBox img {
+  border: solid gray 1px;
+}
 .featured-image-block-grid-header {
     margin-left: auto;
     margin-right: auto;
