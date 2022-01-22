@@ -101,7 +101,7 @@ $(document).ready(function(){
 
                 let selectBtn = document.createElement("button");
                 selectBtn.classList.add( "button","locStorBtn", "expanded");
-                selectBtn.innerText = "Select Hotel";
+                selectBtn.innerText = "Select Rental Car";
                 selectBtn.setAttribute("data-code", i);
     
 

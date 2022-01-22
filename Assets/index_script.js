@@ -76,7 +76,10 @@ $(document).ready(function(){
 
         content = document.createTextNode(storage.getItem("carName"));
         vehicleNameEl.appendChild(content);
-        rentalInfoBox.appendChild(vehicleNameEl);               
+        rentalInfoBox.appendChild(vehicleNameEl);
+        
+        vehiclePicEl.setAttribute("src", storage.getItem("carImage"));
+        rentalInfoBox.appendChild(vehiclePicEl);
 
         content = document.createTextNode("Number of seats: " + storage.getItem("carSeats"));
         vehicleSeatingEl.appendChild(content);
@@ -86,8 +89,7 @@ $(document).ready(function(){
         vehicleTransmissionEl.appendChild(content);
         rentalInfoBox.appendChild(vehicleTransmissionEl);
 
-        vehiclePicEl.setAttribute("src", storage.getItem("carImage"));
-        rentalInfoBox.appendChild(vehiclePicEl);
+
 
         content = document.createTextNode("Total drive off cost: $" + storage.getItem("carPrice"));
         vehicleCostEl.appendChild(content);
