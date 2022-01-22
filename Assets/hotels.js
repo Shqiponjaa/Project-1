@@ -106,7 +106,7 @@ $(document).ready(function(){
             hotelAddressEl.appendChild(content);
             hotelInfoBox.appendChild(hotelAddressEl);
 
-            content = document.createTextNode("Hotel totoal Cost: " +hotelTotalCost);
+            content = document.createTextNode("Hotel Total Cost: " +hotelTotalCost);
             hotelTotalCostEl.appendChild(content);
             hotelInfoBox.appendChild( hotelTotalCostEl);
 
