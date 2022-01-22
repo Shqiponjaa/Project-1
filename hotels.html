@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheapTravel | Hotels</title>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" type="text/CSS" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/CSS" src="CSS/custom.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="hotels.js"></script>
+
+</head>
+<header>
+    <h1>Hotels</h1> </header>
+
+<body>     
+<main id="custom_css">
+<section id="search-box">
+  <h3>Search City Name </h3>
+  <input id="hotelInputBox" type="text" placeholder="City Name">
+  <h3>Select Check-in Date</h3>
+  <input id="hotelCheckinDate" type="date" placeholder="Check-in Date">
+  <h3>Select Check-out Date</h3>
+  <input id="hotelCheckoutDate" type="date" placeholder="Check-out Date">
+  <button id="hotelSearchBtn" class="button expanded">Search hotels</button>
+</section>
+
+<section id="hotelResults">
+  <!-- Hotel API results go here -->
+</section>
+</main>
+</body>
+</html>
