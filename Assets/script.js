@@ -9,17 +9,16 @@ var search = searchButton.value.trim();
 fetchCoords(search);
 searchFlight.value = '';
 
+function handleSearchHistoryClick(e) {
+if (!e.target.matches('.btn-history')) {
+  return;
+}
 
-fetch("https://aerodatabox.p.rapidapi.com/health/services/feeds/FlightSchedules/airports", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "aerodatabox.p.rapidapi.com",
-		"x-rapidapi-key": "ca68ba596fmshdaee9639acc60eap148251jsn32f8dfbe69d0"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
+var btn = e.target;
+var search = btn.getAttribute('data-search');
+fetchCoords(search);
+}
+
+initSearchHistory();
+searchForm.addEventListener('submit', handleSearchFormSubmit);
+searchHistoryContainer.addEventListener('click', handleSearchHistoryClick);
