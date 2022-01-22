@@ -8,36 +8,51 @@
  <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
  <link rel="stylesheet" type="text/css" href="Assets/CSS/tabbed-search.scss">
  <link rel="stylesheet" type="text/css" href="Assets/CSS/layout.scss">
- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
- <script src="index_script.js"></script>
-
   </head>
     </div>
   </div>
   <header>
     <div class="hero-section">
       <div class="hero-section-text">
-        <h1 class="text-center">CheapTravel</h1>
-        <h5 class="text-center">Best Prices Guarantee: Use the tabs to search Flights, Hotels, and Rental Cars!</h5>
+        <h1>CheapTravel</h1>
+        <h5>Best Prices Guarantee</h5>
     </div>
-
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><a href="#">My Account</a></li>
+        <li><a class="button">Login</a></li>
+      </ul>
+      </div>
 </header>
   <body>
       </div>
       <div class="row">
         <div class="medium-12 columns">
           <ul class="tabbed-search tabs" data-tabs="zlh1xn-tabs" id="tabbed-search" role="tablist">
-            <li class="tabs-title is-active" role="presentation"><a href="Flight_Index.html" role="tab" aria-controls="panel1" aria-selected="true" id="panel1-label">Flights</a></li>
-            <li  class="tabs-title is-active" role="presentation"><a href="hotels.html" role="tab" aria-controls="panel2" aria-selected="false" id="panel2-label">Hotels</a></li>
-            <li class="tabs-title is-active" role="presentation"><a href="RentalCar.html"  role="tab" aria-controls="panel3" aria-selected="false" id="panel3-label">Cars</a></li>
+            <li class="tabs-title is-active" role="presentation"><a href="#panel1" role="tab" aria-controls="panel1" aria-selected="true" id="panel1-label">Flights</a></li>
+            <li class="tabs-title is-active" role="presentation"><a href="#panel2" role="tab" aria-controls="panel2" aria-selected="false" id="panel2-label">Hotels</a></li>
+            <li class="tabs-title is-active" role="presentation"><a href="#panel3" role="tab" aria-controls="panel3" aria-selected="false" id="panel3-label">Cars</a></li>
+            <li class="tabs-title is-active" role="presentation"><a href="#panel4" aria-selected="false" role="tab" aria-controls="panel4" id="panel4-label">Packages</a></li>
           </ul>
+    
+    
+          <div class="small-12 medium-2 columns">
+              <button type="button" class="primary button expanded search-button"><i class="fa fa-search"></i>Search Flights</button>
+            <div class="small-12 medium-2 columns">
+            </div>
+          </form>
+              <button type="button" class="primary button expanded search-button"><i class="fa fa-search"></i>Search Hotels</button>
+            <div class="small-12 medium-2 columns">
+              </div>
             </form>
+              <button type="button" class="primary button expanded search-button"><i class="fa fa-search"></i>Search Cars</button>
+          </div>
+        </form>
+            <div class="small-12 medium-2 columns">
+              <button type="button" class="primary button expanded search-button"><i class="fa fa-search"></i>Search Packages</button>
+            </div>
+        </form>
   <div class="featured-image-block-grid">
-    <div id="userSelections">
-      <!-- results go here  -->
-      <h3 class="text-center">Your Selection:</h3>
-      
-    </div>
     <div class="featured-image-block-grid-header small-10 medium-8 large-7 columns text-center">
       <h2>Top Destinations</h2>
       <p>Start planning your travels here with the latest deals for popular destinations.</p>
@@ -61,6 +76,13 @@
        <a href="#">
           <img src="https://unsplash.it/600/440?image=452" />
           <p class="text-center featured-image-block-title">Las Vegas</p>
+        </a>
+      </div>
+      
+      <div class="featured-image-block column">
+       <a href="#">
+          <img src="https://media.gettyimages.com/photos/downtown-sacramento-skyline-after-sunset-picture-id155421331?s=612x612"/>
+          <p class="text-center featured-image-block-title">Sacramento</p>
         </a>
       </div>
       
@@ -135,6 +157,11 @@
                   </ul>
                 </div>
     </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="Assets/script.js"></script>
+    <script src="../building-block/tabbed-search/tabbed-search.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 </body>
 </html>
   

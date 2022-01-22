@@ -74,7 +74,7 @@ fetch("https://aerodatabox.p.rapidapi.com/airports/search/term?q=" + flightInput
 	let content;
 
 	let flightInfoBox = document.createElement("div");
-	flightInfoBox.classList.add("flightBox");
+	flightInfoBox.classList.add("flightBox","card");
 
 	let airline_nameEL = document.createElement("h3");
 	let depart_timeEL = document.createElement("p");
