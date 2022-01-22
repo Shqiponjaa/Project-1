@@ -1,0 +1,42 @@
+/* #custom_css .locStorButton{
+  background-color: rgb(43, 43, 245);
+  transition: 0.2s;
+}
+
+#custom_css .locStorButton:focus {
+  background-color: green;
+
+} */
+.button{
+  background-color: burlywood;
+}
+
+
+.rentalBox{
+  border: solid black 1px;
+  padding: 2px;
+  margin: 5px;
+  background-color: aquamarine;
+  transition: 0.2s;
+
+  
+
+}
+
+.rentalBox:hover {
+  transition: 0.2s;
+  box-shadow: 4px 4px 3px grey;
+}
+
+.rentalBox img {
+  border: solid gray 1px;
+}
+
+  
+
+  
+  
+  
+
+  
+  

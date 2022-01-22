@@ -74,7 +74,7 @@ $(document).ready(function(){
             
 
             let selectBtn = document.createElement("button");
-            selectBtn.classList.add("button", "secondary", "expanded");
+            selectBtn.classList.add( "button","locStorBtn", "expanded");
             selectBtn.innerText = "Select Hotel";
 
             content = document.createTextNode(hotelName);
@@ -101,11 +101,7 @@ $(document).ready(function(){
 
             hotelResultBox[0].appendChild(hotelInfoBox);
         }
-        let selectBtn = $("#hotelSelection");
-        selectBtn.click(function(){
-            this.classList.replace("secondary" , "success");
-        })
-
+        
     })
     })
     .catch(err => {
