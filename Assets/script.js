@@ -1,8 +1,19 @@
-fetch("https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/prices/cheap?origin=HKT&page=None&currency=RUB&destination=-", {
+$(function() {
+var value = document.getElementById('panel1-label').value;
+	var searchButton = document.getElementById("#primary button");
+	searchButton.onclick = getData;
+	button.addEventListener('click', startSearch);
+	
+	preventDefault();
+var search = searchButton.value.trim();
+fetchCoords(search);
+searchFlight.value = '';
+
+
+fetch("https://aerodatabox.p.rapidapi.com/health/services/feeds/FlightSchedules/airports", {
 	"method": "GET",
 	"headers": {
-		"x-access-token": "undefined",
-		"x-rapidapi-host": "travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com",
+		"x-rapidapi-host": "aerodatabox.p.rapidapi.com",
 		"x-rapidapi-key": "ca68ba596fmshdaee9639acc60eap148251jsn32f8dfbe69d0"
 	}
 })
@@ -12,22 +23,3 @@ fetch("https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/pric
 .catch(err => {
 	console.error(err);
 });
-e.preventDefault();
-var search = searchInput.value.trim();
-fetchCoords(search);
-searchInput.value = '';
-
-
-function handleSearchHistoryClick(e) {
-if (!e.target.matches('.btn-history')) {
-  return;
-}
-
-var btn = e.target;
-var search = btn.getAttribute('data-search');
-fetchCoords(search);
-}
-
-initSearchHistory();
-searchForm.addEventListener('submit', handleSearchFormSubmit);
-searchHistoryContainer.addEventListener('click', handleSearchHistoryClick);
