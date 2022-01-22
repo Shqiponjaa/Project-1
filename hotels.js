@@ -3,6 +3,23 @@ $(document).ready(function(){
     let checkInDate = $("#hotelCheckinDate");
     let checkOutDate = $("#hotelCheckoutDate");
     let hotelSearchBtn = $("#hotelSearchBtn");
+    // add selection to local storage 
+       
+    $(document).on('click', ".locStorBtn", function(){
+        console.log("worked");
+        hotelInfo = $(document).find("#hotel_"+ $(this).attr("data-code"));
+        // console.log(hotelInfo.find(".hotelName").text());
+        storage.setItem("hotelName", hotelInfo.find(".hotelName").text());
+        storage.setItem("hotelPicture", hotelInfo.find(".hotelImage").attr("src"));
+        storage.setItem("hotelAddress", hotelInfo.find(".hotelAddress").text());
+        storage.setItem("hotelTotalCost", hotelInfo.find(".hotelTotalCost").text());
+        storage.setItem("hotelReviewScore", hotelInfo.find(".hotelReviewScore").text());
+        
+
+    })
+
+    // localstorage vairable
+    let storage = window.localStorage;
 
     hotelSearchBtn.click(function(){
         let cityInput = cityInputBox.val();
@@ -55,27 +72,29 @@ $(document).ready(function(){
             
             let hotelInfoBox = document.createElement("div");
             hotelInfoBox.classList.add("card");
+            hotelInfoBox.setAttribute("id" , "hotel_" + i );
             
             let hotelNameEl = document.createElement("h3");
-            hotelNameEl.classList.add("card-divider", "text-center");
+            hotelNameEl.classList.add("card-divider", "text-center", "hotelName");
 
             let hotelPictureEl = document.createElement("img");
-            hotelPictureEl.classList.add("card-image");
+            hotelPictureEl.classList.add("card-image","hotelImage");
 
             let hotelAddressEl = document.createElement("p");
-            hotelAddressEl.classList.add("text-center");
+            hotelAddressEl.classList.add("text-center", "hotelAddress");
 
             let hotelTotalCostEl = document.createElement("p");
-            hotelTotalCostEl.classList.add("text-center");
+            hotelTotalCostEl.classList.add("text-center", "hotelTotalCost");
 
             let hotelReviewScoreEl = document.createElement("p");
-            hotelReviewScoreEl.classList.add( "text-center");
+            hotelReviewScoreEl.classList.add( "text-center", "hotelReviewScore");
 
             
 
             let selectBtn = document.createElement("button");
             selectBtn.classList.add( "button","locStorBtn", "expanded");
             selectBtn.innerText = "Select Hotel";
+            selectBtn.setAttribute("data-code", i);
 
             content = document.createTextNode(hotelName);
             hotelNameEl.appendChild(content);
@@ -97,10 +116,20 @@ $(document).ready(function(){
             hotelInfoBox.appendChild(hotelReviewScoreEl);
 
             hotelInfoBox.appendChild(selectBtn);
+
+            // selectBtn.click(function(){
+            //     let hotelBox = $(this).find(".card");
+            //     let hotelNameStor= hotelBox.find(".hotelName");
+
+            
+            //     storage.setItem("hotelName", hotelNameStor)
+            // })
             
 
             hotelResultBox[0].appendChild(hotelInfoBox);
         }
+        
+
         
     })
     })
