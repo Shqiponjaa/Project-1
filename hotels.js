@@ -3,24 +3,23 @@ $(document).ready(function(){
     let checkInDate = $("#hotelCheckinDate");
     let checkOutDate = $("#hotelCheckoutDate");
     let hotelSearchBtn = $("#hotelSearchBtn");
+    
     // add selection to local storage 
-       
+    let storage = window.localStorage;
     $(document).on('click', ".locStorBtn", function(){
         console.log("worked");
         hotelInfo = $(document).find("#hotel_"+ $(this).attr("data-code"));
         // console.log(hotelInfo.find(".hotelName").text());
         storage.setItem("hotelName", hotelInfo.find(".hotelName").text());
         storage.setItem("hotelPicture", hotelInfo.find(".hotelImage").attr("src"));
-        storage.setItem("hotelAddress", hotelInfo.find(".hotelAddress").text());
-        storage.setItem("hotelTotalCost", hotelInfo.find(".hotelTotalCost").text());
-        storage.setItem("hotelReviewScore", hotelInfo.find(".hotelReviewScore").text());
+        storage.setItem("hotelAddress", hotelInfo.find(".hotelAddress").text().split(":").pop());
+        storage.setItem("hotelTotalCost", hotelInfo.find(".hotelTotalCost").text().split(":").pop());
+        storage.setItem("hotelReviewScore", hotelInfo.find(".hotelReviewScore").text().split(":").pop());
         
 
     })
 
-    // localstorage vairable
-    let storage = window.localStorage;
-
+    // complete fetch when button is clicked 
     hotelSearchBtn.click(function(){
         let cityInput = cityInputBox.val();
         let checkinInput = checkInDate.val();
@@ -107,23 +106,16 @@ $(document).ready(function(){
             hotelAddressEl.appendChild(content);
             hotelInfoBox.appendChild(hotelAddressEl);
 
-            content = document.createTextNode(hotelTotalCost);
+            content = document.createTextNode("Hotel totoal Cost: " +hotelTotalCost);
             hotelTotalCostEl.appendChild(content);
-            hotelInfoBox.appendChild(hotelTotalCostEl);
+            hotelInfoBox.appendChild( hotelTotalCostEl);
 
-            content = document.createTextNode(hotelReviewScore);
-            hotelReviewScoreEl.appendChild(content);
+            content = document.createTextNode("Hotel Review Rating: " +hotelReviewScore);
+            hotelReviewScoreEl.appendChild( content);
             hotelInfoBox.appendChild(hotelReviewScoreEl);
 
             hotelInfoBox.appendChild(selectBtn);
 
-            // selectBtn.click(function(){
-            //     let hotelBox = $(this).find(".card");
-            //     let hotelNameStor= hotelBox.find(".hotelName");
-
-            
-            //     storage.setItem("hotelName", hotelNameStor)
-            // })
             
 
             hotelResultBox[0].appendChild(hotelInfoBox);

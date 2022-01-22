@@ -4,6 +4,21 @@ $(document).ready(function(){
     let rentalPickupBox = $("#rentalPickupDate");
     let rentalDropoffBox = $("#rentalDropoffDate");
 
+    // add selection to local storage 
+    let storage = window.localStorage;
+    $(document).on('click', ".locStorBtn", function(){
+        console.log("worked");
+        carInfo = $(document).find("#car_"+ $(this).attr("data-code"));
+        // console.log(hotelInfo.find(".hotelName").text());
+        storage.setItem("carName", carInfo.find(".carName").text());
+        storage.setItem("carImage", carInfo.find(".carImage").attr("src"));
+        storage.setItem("carSeats", carInfo.find(".carSeats").text().split(":").pop());
+        storage.setItem("carTransmission", carInfo.find(".carTransmission").text().split(":").pop());
+        storage.setItem("carPrice", carInfo.find(".carPrice").text().split(":").pop());
+        storage.setItem("carSupName", carInfo.find(".carSupName").text().split(":").pop());
+
+         })
+
 
     rentalSearchBtn.click(function(){
         let cityInput = rentalInputBox.val();
@@ -59,18 +74,36 @@ $(document).ready(function(){
                 let content;
 
                 let rentalInfoBox = document.createElement("div");
-                rentalInfoBox.classList.add("rentalBox");
+                rentalInfoBox.classList.add("card");
+                rentalInfoBox.setAttribute("id", "car_" + i);
+
                 let vehicleNameEl = document.createElement("h3");
-                let vehicleSeatingEl = document.createElement("p");
-                let vehicleTransmissionEl = document.createElement("p");
+                vehicleNameEl.classList.add("card-divider", "text-center", "carName")
+
                 let vehiclePicEl = document.createElement("img");
+                vehiclePicEl.classList.add("card-image", "carImage");
+
+                let vehicleSeatingEl = document.createElement("p");
+                vehicleSeatingEl.classList.add("text-center", "carSeats");
+
+                let vehicleTransmissionEl = document.createElement("p");
+                vehicleTransmissionEl.classList.add("text-center", "carTransmission")
 
                 let vehicleCostEl = document.createElement("p");
+                vehicleCostEl.classList.add("text-center","carPrice");
+
                 let supplierNameEl = document.createElement("p");
-                let supplierAddressEl = document.createElement("p");
+                supplierNameEl.classList.add("text-center", "carSupName");
+
                 let supplierLogoEl = document.createElement("img"); 
+                let supplierAddressEl = document.createElement("p");
+                
 
-
+                let selectBtn = document.createElement("button");
+                selectBtn.classList.add( "button","locStorBtn", "expanded");
+                selectBtn.innerText = "Select Hotel";
+                selectBtn.setAttribute("data-code", i);
+    
 
                 content = document.createTextNode(vehicleName);
                 vehicleNameEl.appendChild(content);
@@ -102,6 +135,8 @@ $(document).ready(function(){
 
                 supplierLogoEl.setAttribute("src" , supplierLogo);
                 rentalInfoBox.appendChild(supplierLogoEl);
+
+                rentalInfoBox.append(selectBtn);
 
                 rentalResultBox[0].appendChild(rentalInfoBox);}
 
